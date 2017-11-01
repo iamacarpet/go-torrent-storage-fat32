@@ -75,7 +75,7 @@ func (sp *fat32Piece) chunkKey(index int) (string) {
     return fmt.Sprintf("%d", index)
 }
 
-func (sp *fat32Piece) GetIsComplete() (ret bool) {
+func (sp *fat32Piece) Completion() Completion {
     ret, _ = sp.trt.cl.pc.Get(sp.pieceKey())
     return
 }
