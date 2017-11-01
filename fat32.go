@@ -76,7 +76,8 @@ func (sp *fat32Piece) chunkKey(index int) (string) {
 }
 
 func (sp *fat32Piece) Completion() storage.Completion {
-    return sp.trt.cl.pc.Get(sp.pieceKey())
+    ret, _ := sp.trt.cl.pc.Get(sp.pieceKey())
+    return ret
 }
 
 func (sp *fat32Piece) MarkComplete() error {
